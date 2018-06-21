@@ -80,11 +80,7 @@ export class UsersProvider {
   update(user: any) {
     return new Promise((resolve, reject) => {
       let url = this.API_URL + 'users/' + user.id;
-      let data = {
-        "first_name": user.first_name,
-        "last_name": user.last_name
-      }
- 
+      
       this.http.put(url, user)
         .subscribe((result: any) => {
           resolve(result.json());

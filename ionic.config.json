@@ -1,6 +1,6 @@
 {
   "name": "Bicudos",
-  "app_id": "",
+  "app_id": "0a3b3c6b",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

@@ -52,7 +52,7 @@ export class HomePage {
           this.toast.create({ message: 'Senha incorreta', position: 'botton', duration: 3000 }).present();
         } else {
           this.toast.create({ message: 'Usuário logado com sucesso.', position: 'botton', duration: 3000 }).present();
-          this.navCtrl.push('LoginPage');
+          this.navCtrl.push('TabsPage');
         }
       })
       .catch((error: any) => {
