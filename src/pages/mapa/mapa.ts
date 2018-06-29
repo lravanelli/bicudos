@@ -47,18 +47,18 @@ export class MapaPage {
             position: this.map.getCenter()
           });
          
-          //let content = "<h4></h4>";  
+          let content = "<h4>Local do Evento</h4>";  
           
           
          
 
-          //let infoWindow = new google.maps.InfoWindow({
-          //  content: content
-          //});
+          let infoWindow = new google.maps.InfoWindow({
+            content: content
+          });
          
-          //google.maps.event.addListener(marker, 'click', () => {
-          //  infoWindow.open(this.map, marker);
-          //});  
+          google.maps.event.addListener(marker, 'click', () => {
+            infoWindow.open(this.map, marker);
+          });  
 
         } else {
         }
