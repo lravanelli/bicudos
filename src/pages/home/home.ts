@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { UsersProvider } from './../../providers/users/users';
 
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -32,7 +33,7 @@ export class HomePage {
           this.toast.create({ message: 'e-mail já cadastrado', position: 'botton', duration: 3000 }).present();
         } else {
           this.toast.create({ message: 'Usuário cadastrado com sucesso', position: 'botton', duration: 3000 }).present();
-          this.navCtrl.push('CreateAccountPage');
+          this.navCtrl.push('TabsPage', {iduser: this.model.id});
         }       
       })
       .catch((error: any) => {
@@ -52,7 +53,7 @@ export class HomePage {
           this.toast.create({ message: 'Senha incorreta', position: 'botton', duration: 3000 }).present();
         } else {
           this.toast.create({ message: 'Usuário logado com sucesso.', position: 'botton', duration: 3000 }).present();
-          this.navCtrl.push('TabsPage');
+          this.navCtrl.push('TabsPage', {iduser: this.model.id});
         }
       })
       .catch((error: any) => {

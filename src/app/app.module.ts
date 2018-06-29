@@ -7,10 +7,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { UsersProvider } from '../providers/users/users';
+import { EventosProvider } from '../providers/eventos/eventos';
 import { Tab1rootPage } from '../pages/tab1root/tab1root';
 import { Tab2rootPage } from '../pages/tab2root/tab2root'; 
 import { HttpClientModule } from '@angular/common/http';
- 
+import { Ionic2RatingModule } from 'ionic2-rating';
+import { Geolocation } from '@ionic-native/geolocation';
+import { GoogleMaps } from '@ionic-native/google-maps';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    Ionic2RatingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,7 +39,10 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UsersProvider
+    UsersProvider,
+    EventosProvider,
+    Geolocation,
+    GoogleMaps
   ]
 })
 export class AppModule {}

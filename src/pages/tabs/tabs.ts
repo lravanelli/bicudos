@@ -16,14 +16,18 @@ import { Tab2rootPage } from '../tab2root/tab2root';
   templateUrl: 'tabs.html',
 })
 export class TabsPage {
+  public iduser: number;
   tabroot1 = Tab1rootPage;
   tabroot2 = Tab2rootPage;
   
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.iduser = navParams.get('iduser');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TabsPage');
+    console.log(this.iduser);
   }
 
 }
