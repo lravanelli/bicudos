@@ -16,6 +16,7 @@
             </ion-avatar>
         <h2>{{ evento.evento }}</h2>
         <p>{{ evento.data | date: 'dd/MM/yyyy'}}</p>
+        <p>Participando: {{ evento.ingressado }}</p>
         <rating [(ngModel)]="evento.score" 
         readOnly="true" 
         max="5"
@@ -31,9 +32,9 @@
  
   </ion-list>
 
-  <ion-infinite-scroll (ionInfinite)="getEventos($event)">
-      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
-      </ion-infinite-scroll-content>
-    </ion-infinite-scroll>
+  <ion-infinite-scroll (ionInfinite)="finish()">
+      <!--<ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Aguarde...">
+      </ion-infinite-scroll-content>-->
+  </ion-infinite-scroll>
  
 </ion-content>

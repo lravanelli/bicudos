@@ -19,10 +19,14 @@ import { EventosProvider } from './../../providers/eventos/eventos';
 export class EventoDetalhePage {
   evento: any;
   iduser: number;
+  endereco: string;
+  cep: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private eventoProvider: EventosProvider, private toast: ToastController) {
     this.evento = navParams.get("evento");
     this.iduser = navParams.get("iduser");
+    this.endereco = this.evento.logradouro + ',' + this.evento.cidade;
+    this.cep = this.evento.cep;
   }
 
   ionViewDidLoad() {
@@ -43,7 +47,7 @@ export class EventoDetalhePage {
   }
 
   openMap(){
-    this.navCtrl.push('MapaPage');
+    this.navCtrl.push('MapaPage', {endereco: this.endereco, cep: this.cep, evento: this.evento.evento});
   }
 
  

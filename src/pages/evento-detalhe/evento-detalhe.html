@@ -52,11 +52,18 @@
      <p>
        Valor Oferecido: {{evento.valor | currency:'BRL':true:'1.2-2'}}
      </p>
+     <p>
+       Data do Evento: {{ evento.data | date: 'dd/MM/yyyy'}}
+      </p>
+
+     <p>
+       Início: {{ evento.hs_inicio | date: 'hh:mm'}} Término: {{ evento.hs_fim | date: 'hh:mm'}}
+    </p>
     
     </ion-card-content>
     
   </ion-card>
 
-  <button ion-button block (click)="openMap()">Login</button> 
+  <button ion-button block (click)="openMap()">Ver no Mapa</button> 
    
 </ion-content>

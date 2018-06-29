@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
  
 @Injectable()
 export class UsersProvider {
-  private API_URL = 'http://www2.gmdlogistica.com.br:8085/bicudosapi/'
+  private API_URL = 'http://www.gmdlogistica.com.br:8085/bicudosapi/'
  
   constructor(public http: HttpClient) { }
  

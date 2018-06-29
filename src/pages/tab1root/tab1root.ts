@@ -44,12 +44,17 @@ export class Tab1rootPage {
         }
       })
       .catch((error: any) => {
-        this.toast.create({ message: 'Erro ao listar os usuários. Erro: ' + error.error, position: 'botton', duration: 3000 }).present();
+        this.toast.create({ message: 'Erro ao listar os eventos. Erro: ' + error.error, position: 'botton', duration: 3000 }).present();
       });
+  }
+
+  finish(){
+    this.toast.create({ message: 'Não há mais Eventos!', position: 'botton', duration: 3000 }).present();
   }
 
   openEvento(evento: any) {
     this.navCtrl.push('EventoDetalhePage', { evento: evento, iduser: this.iduser });
+    this.infiniteScroll.enable(false);
   } 
 
 }
